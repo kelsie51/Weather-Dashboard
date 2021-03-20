@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    function gettingJSON(){
+        let city = 'andover';
+       
+        document.write("jquery loaded");
+        $.getJSON("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=imperial&APPID=94b855f34d06575756d4ca16a7850e11",function(json){
+            document.write(JSON.stringify(json));
+        });
+    }
+    </script>
+</head>
+<body>
+<button id = "getIt" onclick = "gettingJSON()">Get JSON</button>
+
+</body>
+</html>
