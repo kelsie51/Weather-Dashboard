@@ -1,55 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css">
-<title>Weather</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-    function gettingJSON(){
-        let city = 'andover';
-       
-        document.write("jquery loaded");
-        $.getJSON("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=imperial&APPID=94b855f34d06575756d4ca16a7850e11",function(json){
-            document.write(JSON.stringify(json));
-        });
-    }
-</script>
+    <meta charset="UTF-8">
+    <title>Weather Forecasting App</title>   
+    <link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
-<body>
-<button id = "getIt" onclick = "gettingJSON()">Get JSON</button>
-
-<button onclick="getLocation()">Try IT</button>
-
-<p id = "demo"></p>
-
-<script>
-var x = document.getElementById("demo");
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-</script>
-
- <!--Simple dashboard grid layout
-<div class="grid-container">
-  <header class="header"></header>
-  <aside class="sidenav"></aside>
-  <main class="main"></main>
-  <footer class="footer"></footer>
-</div> -->
+<body onload="localStorageHandlerAdd(false)"></body>>    
+    <div class="container">
+        <div class="app-title">
+            <p>Weather</p>
+        </div>
+        <input type="text" id="weatherCity" placeholder="Enter City">
+        <button type="button" onclick="getWeather()">Get Weather</button>
+		<div>
+			<p id="buttonContainer">
+			</p>
+		
+		</div>
+        <div id="notification" class="notification"> </div>
+        <div class="weather-container">
+            <div id="weather-Icon" class="weather-icon">
+                <img src="icons/unknown.png" alt="">
+            </div>
+            <div id="temperature-value" class="temperature-value">
+                <p>- °<span>F</span></p>
+            </div>
+            <div id="humidity-value" class="humidity-value">
+                <p> Humidity: </p>
+            </div>
+            <div id="temperature-description" class="temperature-description">
+                <p> - </p>
+            </div>
+            <div id="location" class="location">
+                <p>-</p>
+            </div>
+        </div>
+		<hr />
+		<!--Forecast Day 1 Begin-->
+		<div id="forecast-day-1" class = "weather-container">
+			<div class="temperature-description-forecast">
+				<p id = "forecastDate1"></p>
+			</div>
+			<div id="weather-Icon1" >
+                <img src="icons/unknown.png" alt="">
+            </div>			
+			<div class = "temperature-value-forecast">
+				<p id = "forecastTemp1"></p>
+			</div>
+			<div class="humidity-value-forecast">
+				<p id = "forecastHumidity1"></p>
+			</div>
+			<div class="temperature-description-forecast">
+				<p id = "forecastDescription1"></p>
+			</div>
+			<div  class="location">
+                <p id="forecastLocation1">-</p>
+            </div>
+		</div>		
+		<!--Forecast Day 1 End-->
+		
+		<!--Forecast Day 2 Begin-->
+		<div class="spacer"></div>
+		<div id="forecast-day-2" class = "weather-container">
+			<div class="temperature-description-forecast">
+				<p id = "forecastDate2"></p>
+			</div>
+			<div id="weather-Icon2" >
+                <img src="icons/unknown.png" alt="">
+            </div>			
+			<div class = "temperature-value-forecast">
+				<p id = "forecastTemp2"></p>
+			</div>
+			<div class="humidity-value-forecast">
+				<p id = "forecastHumidity2"></p>
+			</div>
+			<div class="temperature-description-forecast">
+				<p id = "forecastDescription2"></p>
+			</div>
+			<div  class="location">
+                <p id="forecastLocation2">-</p>
+            </div>
+		</div>		
+		<!--Forecast Day 2 End-->
+		
+		<!--Forecast Day 3 Begin-->
+		<div class="spacer"></div>
+		<div id="forecast-day-3" class = "weather-container">
+			<div class="temperature-description-forecast">
+				<p id = "forecastDate3"></p>
+			</div>
+			<div id="weather-Icon3" >
+                <img src="icons/unknown.png" alt="">
+            </div>			
+			<div class = "temperature-value-forecast">
+				<p id = "forecastTemp3"></p>
+			</div>
+			<div class="humidity-value-forecast">
+				<p id = "forecastHumidity3"></p>
+			</div>
+			<div class="temperature-description-forecast">
+				<p id = "forecastDescription3"></p>
+			</div>
+			<div  class="location">
+                <p id="forecastLocation3">-</p>
+            </div>
+		</div>		
+		<!--Forecast Day 3 End-->
+		
+		<!--Forecast Day 4 Begin-->
+		<div class="spacer"></div>
+		<div id="forecast-day-4" class = "weather-container">
+			<div class="temperature-description-forecast">
+				<p id = "forecastDate4"></p>
+			</div>
+			<div id="weather-Icon4" >
+                <img src="icons/unknown.png" alt="">
+            </div>			
+			<div class = "temperature-value-forecast">
+				<p id = "forecastTemp4"></p>
+			</div>
+			<div class="humidity-value-forecast">
+				<p id = "forecastHumidity4"></p>
+			</div>
+			<div class="temperature-description-forecast">
+				<p id = "forecastDescription4"></p>
+			</div>
+			<div  class="location">
+                <p id="forecastLocation4">-</p>
+            </div>
+		</div>		
+		<!--Forecast Day 4 End-->
+		
+		<!--Forecast Day 5 Begin-->
+		<div class="spacer"></div>
+		<div id="forecast-day-5" class = "weather-container">
+			<div class="temperature-description-forecast">
+				<p id = "forecastDate5"></p>
+			</div>
+			<div id="weather-Icon5" >
+                <img src="icons/unknown.png" alt="">
+            </div>			
+			<div class = "temperature-value-forecast">
+				<p id = "forecastTemp5"></p>
+			</div>
+			<div class="humidity-value-forecast">
+				<p id = "forecastHumidity5"></p>
+			</div>
+			<div class="temperature-description-forecast">
+				<p id = "forecastDescription5"></p>
+			</div>
+			<div  class="location">
+                <p id="forecastLocation5">-</p>
+            </div>
+		</div>		
+		<!--Forecast Day 5 End-->		
+    </div>    
+    <script src="app.js"></script>
 </body>
 </html>
+
+
