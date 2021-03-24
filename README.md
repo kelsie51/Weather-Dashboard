@@ -4,5 +4,5 @@
 
 </p> Link to  page : https://kelsie51.github.io/Weather-Forecast/ <p>
   
-![Screenshot](/03-javascript-homework-demo.png)
+![Screenshot](/wdash.PNG)
 
