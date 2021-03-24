@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Weather Forecasting App</title>   
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results | Library of Congress Search</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/jass.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="style.css">
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
-<body onload="localStorageHandlerAdd(false)"></body>>    
-    <div class="container">
+
+<body  onload="localStorageHandlerAdd(false)">
+
+  <div class="flex-row align-start align-stretch-md align-content-start align-content-stretch-md min-100-vh bg-primary">
+    <div class="col-12 col-md-3 bg-light p-3">
+      <h1 class="text-primary">Library of Congress Search Engine</h1>
+      <form id="search-form" class="mb-2">
+        <input id="search-input" class="form-input w-100" type="text" placeholder="Search!">
+        <select id="format-input" class="form-input w-100">
+          <option value="" disabled selected>Select a format...</option>
+          <option value="maps">Maps</option>
+          <option value="audio">Audio</option>
+          <option value="photos">Photos</option>
+          <option value="manuscripts">Manuscripts</option>
+          <option value="newspapers">Newspapers</option>
+          <option value="film-and-videos">Film and Videos</option>
+          <option value="notated-music">Notated Music</option>
+          <option value="websites">Websites</option>
+        </select>
+        <button class="btn btn-info btn-block">Search</button>
+      </form>
+
+      <div class="container">
         <div class="app-title">
             <p>Weather</p>
         </div>
@@ -36,128 +63,140 @@
                 <p>-</p>
             </div>
         </div>
+        </div>
 		<hr />
-		<!--Forecast Day 1 Begin-->
-		<div id="forecast-day-1" class = "weather-container">
-			<div class="temperature-description-forecast">
-				<p id = "forecastDate1"></p>
-			</div>
-			<div id="weather-Icon1" >
-                <img src="icons/unknown.png" alt="">
-            </div>			
-			<div class = "temperature-value-forecast">
-				<p id = "forecastTemp1"></p>
-			</div>
-			<div class="humidity-value-forecast">
-				<p id = "forecastHumidity1"></p>
-			</div>
-			<div class="temperature-description-forecast">
-				<p id = "forecastDescription1"></p>
-			</div>
-			<div  class="location">
-                <p id="forecastLocation1">-</p>
-            </div>
-		</div>		
-		<!--Forecast Day 1 End-->
-		
-		<!--Forecast Day 2 Begin-->
-		<div class="spacer"></div>
-		<div id="forecast-day-2" class = "weather-container">
-			<div class="temperature-description-forecast">
-				<p id = "forecastDate2"></p>
-			</div>
-			<div id="weather-Icon2" >
-                <img src="icons/unknown.png" alt="">
-            </div>			
-			<div class = "temperature-value-forecast">
-				<p id = "forecastTemp2"></p>
-			</div>
-			<div class="humidity-value-forecast">
-				<p id = "forecastHumidity2"></p>
-			</div>
-			<div class="temperature-description-forecast">
-				<p id = "forecastDescription2"></p>
-			</div>
-			<div  class="location">
-                <p id="forecastLocation2">-</p>
-            </div>
-		</div>		
-		<!--Forecast Day 2 End-->
-		
-		<!--Forecast Day 3 Begin-->
-		<div class="spacer"></div>
-		<div id="forecast-day-3" class = "weather-container">
-			<div class="temperature-description-forecast">
-				<p id = "forecastDate3"></p>
-			</div>
-			<div id="weather-Icon3" >
-                <img src="icons/unknown.png" alt="">
-            </div>			
-			<div class = "temperature-value-forecast">
-				<p id = "forecastTemp3"></p>
-			</div>
-			<div class="humidity-value-forecast">
-				<p id = "forecastHumidity3"></p>
-			</div>
-			<div class="temperature-description-forecast">
-				<p id = "forecastDescription3"></p>
-			</div>
-			<div  class="location">
-                <p id="forecastLocation3">-</p>
-            </div>
-		</div>		
-		<!--Forecast Day 3 End-->
-		
-		<!--Forecast Day 4 Begin-->
-		<div class="spacer"></div>
-		<div id="forecast-day-4" class = "weather-container">
-			<div class="temperature-description-forecast">
-				<p id = "forecastDate4"></p>
-			</div>
-			<div id="weather-Icon4" >
-                <img src="icons/unknown.png" alt="">
-            </div>			
-			<div class = "temperature-value-forecast">
-				<p id = "forecastTemp4"></p>
-			</div>
-			<div class="humidity-value-forecast">
-				<p id = "forecastHumidity4"></p>
-			</div>
-			<div class="temperature-description-forecast">
-				<p id = "forecastDescription4"></p>
-			</div>
-			<div  class="location">
-                <p id="forecastLocation4">-</p>
-            </div>
-		</div>		
-		<!--Forecast Day 4 End-->
-		
-		<!--Forecast Day 5 Begin-->
-		<div class="spacer"></div>
-		<div id="forecast-day-5" class = "weather-container">
-			<div class="temperature-description-forecast">
-				<p id = "forecastDate5"></p>
-			</div>
-			<div id="weather-Icon5" >
-                <img src="icons/unknown.png" alt="">
-            </div>			
-			<div class = "temperature-value-forecast">
-				<p id = "forecastTemp5"></p>
-			</div>
-			<div class="humidity-value-forecast">
-				<p id = "forecastHumidity5"></p>
-			</div>
-			<div class="temperature-description-forecast">
-				<p id = "forecastDescription5"></p>
-			</div>
-			<div  class="location">
-                <p id="forecastLocation5">-</p>
-            </div>
-		</div>		
-		<!--Forecast Day 5 End-->		
-    </div>    
-    <script src="app.js"></script>
+
+
+        </div>
+
+    <div class="col-12 col-md-9 p-3 text-light">
+      <h2>Showing results for <span id="result-text"></span></h2>
+      <div id="result-content"></div>
+
+      <div class="container">
+        <div id="forecast-day-1" class = "weather-container">
+          <div class="temperature-description-forecast">
+            <p id = "forecastDate1"></p>
+          </div>
+          <div id="weather-Icon1" >
+                    <img src="icons/unknown.png" alt="">
+                </div>			
+          <div class = "temperature-value-forecast">
+            <p id = "forecastTemp1"></p>
+          </div>
+          <div class="humidity-value-forecast">
+            <p id = "forecastHumidity1"></p>
+          </div>
+          <div class="temperature-description-forecast">
+            <p id = "forecastDescription1"></p>
+          </div>
+          <div  class="location">
+                    <p id="forecastLocation1">-</p>
+                </div>
+        </div>		
+        <!--Forecast Day 1 End-->
+        
+        <!--Forecast Day 2 Begin-->
+        <div class="spacer"></div>
+        <div id="forecast-day-2" class = "weather-container">
+          <div class="temperature-description-forecast">
+            <p id = "forecastDate2"></p>
+          </div>
+          <div id="weather-Icon2" >
+                    <img src="icons/unknown.png" alt="">
+                </div>			
+          <div class = "temperature-value-forecast">
+            <p id = "forecastTemp2"></p>
+          </div>
+          <div class="humidity-value-forecast">
+            <p id = "forecastHumidity2"></p>
+          </div>
+          <div class="temperature-description-forecast">
+            <p id = "forecastDescription2"></p>
+          </div>
+          <div  class="location">
+                    <p id="forecastLocation2">-</p>
+                </div>
+        </div>		
+        <!--Forecast Day 2 End-->
+        
+        <!--Forecast Day 3 Begin-->
+        <div class="spacer"></div>
+        <div id="forecast-day-3" class = "weather-container">
+          <div class="temperature-description-forecast">
+            <p id = "forecastDate3"></p>
+          </div>
+          <div id="weather-Icon3" >
+                    <img src="icons/unknown.png" alt="">
+                </div>			
+          <div class = "temperature-value-forecast">
+            <p id = "forecastTemp3"></p>
+          </div>
+          <div class="humidity-value-forecast">
+            <p id = "forecastHumidity3"></p>
+          </div>
+          <div class="temperature-description-forecast">
+            <p id = "forecastDescription3"></p>
+          </div>
+          <div  class="location">
+                    <p id="forecastLocation3">-</p>
+                </div>
+        </div>		
+        <!--Forecast Day 3 End-->
+        
+        <!--Forecast Day 4 Begin-->
+        <div class="spacer"></div>
+        <div id="forecast-day-4" class = "weather-container">
+          <div class="temperature-description-forecast">
+            <p id = "forecastDate4"></p>
+          </div>
+          <div id="weather-Icon4" >
+                    <img src="icons/unknown.png" alt="">
+                </div>			
+          <div class = "temperature-value-forecast">
+            <p id = "forecastTemp4"></p>
+          </div>
+          <div class="humidity-value-forecast">
+            <p id = "forecastHumidity4"></p>
+          </div>
+          <div class="temperature-description-forecast">
+            <p id = "forecastDescription4"></p>
+          </div>
+          <div  class="location">
+                    <p id="forecastLocation4">-</p>
+                </div>
+        </div>		
+        <!--Forecast Day 4 End-->
+        
+        <!--Forecast Day 5 Begin-->
+        <div class="spacer"></div>
+        <div id="forecast-day-5" class = "weather-container">
+          <div class="temperature-description-forecast">
+            <p id = "forecastDate5"></p>
+          </div>
+          <div id="weather-Icon5" >
+                    <img src="icons/unknown.png" alt="">
+                </div>			
+          <div class = "temperature-value-forecast">
+            <p id = "forecastTemp5"></p>
+          </div>
+          <div class="humidity-value-forecast">
+            <p id = "forecastHumidity5"></p>
+          </div>
+          <div class="temperature-description-forecast">
+            <p id = "forecastDescription5"></p>
+          </div>
+          <div  class="location">
+                    <p id="forecastLocation5">-</p>
+                </div>
+        </div>		
+
+
+    </div>
+  </div>
+
+  <script src="./assets/js/display-search.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
-
-
