@@ -172,7 +172,7 @@ function displayWeather(){
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${forecastWeatherShared.city}, ${forecastWeatherShared.country}`;
 	
-	document.getElementById("forecastHumidity1").innerHTML = "Humidity:" + forecastDay1.humidity ;
+	document.getElementById("forecastHumidity1").innerHTML = "Humidity:" + forecastDay1.humidity +"%" ;
 	document.getElementById("forecastTemp1").innerHTML = forecastDay1.temperature +"°<span>F</span>";
 	document.getElementById("forecastDescription1").innerHTML = forecastDay1.description;
 	document.getElementById("forecastDate1").innerHTML = "Date: "+forecastDay1.date;
@@ -180,28 +180,28 @@ function displayWeather(){
 	document.getElementById("weather-Icon1").innerHTML = `<img src="icons/${forecastDay1.iconId}.png"/>`
 
 	
-	document.getElementById("forecastHumidity2").innerHTML = "Humidity:" + forecastDay2.humidity ;
+	document.getElementById("forecastHumidity2").innerHTML = "Humidity:" + forecastDay2.humidity +"%";
 	document.getElementById("forecastTemp2").innerHTML = forecastDay2.temperature +"°<span>F</span>";
 	document.getElementById("forecastDescription2").innerHTML = forecastDay2.description;
 	document.getElementById("forecastDate2").innerHTML = "Date: "+forecastDay2.date;
 	document.getElementById("forecastLocation2").innerHTML = `${forecastWeatherShared.city}, ${forecastWeatherShared.country}`;
 	document.getElementById("weather-Icon2").innerHTML = `<img src="icons/${forecastDay2.iconId}.png"/>`
 
-	document.getElementById("forecastHumidity3").innerHTML = "Humidity:" + forecastDay3.humidity ;
+	document.getElementById("forecastHumidity3").innerHTML = "Humidity:" + forecastDay3.humidity +"%";
 	document.getElementById("forecastTemp3").innerHTML = forecastDay3.temperature +"°<span>F</span>";
 	document.getElementById("forecastDescription3").innerHTML = forecastDay3.description;
 	document.getElementById("forecastDate3").innerHTML = "Date: "+forecastDay3.date;
 	document.getElementById("forecastLocation3").innerHTML = `${forecastWeatherShared.city}, ${forecastWeatherShared.country}`;
 	document.getElementById("weather-Icon3").innerHTML = `<img src="icons/${forecastDay3.iconId}.png"/>`
 
-	document.getElementById("forecastHumidity4").innerHTML = "Humidity:" + forecastDay4.humidity ;
+	document.getElementById("forecastHumidity4").innerHTML = "Humidity:" + forecastDay4.humidity+"%" ;
 	document.getElementById("forecastTemp4").innerHTML = forecastDay4.temperature +"°<span>F</span>";
 	document.getElementById("forecastDescription4").innerHTML = forecastDay4.description;
 	document.getElementById("forecastDate4").innerHTML = "Date: "+forecastDay4.date;
 	document.getElementById("forecastLocation4").innerHTML = `${forecastWeatherShared.city}, ${forecastWeatherShared.country}`;
 	document.getElementById("weather-Icon4").innerHTML = `<img src="icons/${forecastDay4.iconId}.png"/>`
 
-	document.getElementById("forecastHumidity5").innerHTML = "Humidity:" + forecastDay5.humidity ;
+	document.getElementById("forecastHumidity5").innerHTML = "Humidity:" + forecastDay5.humidity+"%" ;
 	document.getElementById("forecastTemp5").innerHTML = forecastDay5.temperature +"°<span>F</span>";
 	document.getElementById("forecastDescription5").innerHTML = forecastDay5.description;
 	document.getElementById("forecastDate5").innerHTML = "Date: "+forecastDay5.date;
