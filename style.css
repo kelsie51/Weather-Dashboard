@@ -161,8 +161,11 @@ body{
 	height:30px;
 }
 .btn{
-	
+	padding-left: 10px;
+    box-shadow: #013031;
 }
 
-
+.hide{
+    display: none;
+}
 

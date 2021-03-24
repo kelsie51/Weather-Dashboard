@@ -32,7 +32,7 @@ function getWeather(){
 
     city = document.getElementById("weatherCity").value;
 
-	localStorageHandlerAdd(true);
+	
     
     let api = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
     
@@ -52,7 +52,7 @@ function getWeather(){
             forecastWeatherShared.country = data.sys.country;
             weather.humidity = data.main.humidity;
         })
-        
+        localStorageHandlerAdd(true);
 		getForecast();
 }
 function getWeather_SearchedCities(){
